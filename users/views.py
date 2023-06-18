@@ -1,5 +1,6 @@
 from django.shortcuts import render, HttpResponseRedirect
-from django.contrib import auth, messages
+from django.contrib import auth
+from django.contrib.auth.views import LoginView
 from django.urls import reverse, reverse_lazy
 from django.views.generic.edit import CreateView, UpdateView
 
@@ -35,6 +36,12 @@ class UserProfileView(UpdateView):
         return context
 
 
+class UserLoginView(LoginView):
+    template_name = 'users/login.html'
+    form_class = UserLoginForm
+    success_url = reverse_lazy('index')
+
+
 def login(request):
     if request.method == 'POST':
         form = UserLoginForm(data=request.POST)
@@ -49,8 +56,3 @@ def login(request):
         form = UserLoginForm()
     context = {'form': form}
     return render(request, 'users/login.html', context)
-
-
-def logout(request):
-    auth.logout(request)
-    return HttpResponseRedirect(reverse('index'))
