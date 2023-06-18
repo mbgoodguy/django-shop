@@ -1,14 +1,22 @@
 from django.shortcuts import render, HttpResponseRedirect
-from products.models import Product, ProductCategory, Basket
 from django.contrib.auth.decorators import login_required
 from django.views.generic import TemplateView
 from django.views.generic.list import ListView
 
+from products.models import Product, ProductCategory, Basket
+from common.views import TitleMixin
 
-class ProductsListView(ListView):
+
+class IndexView(TitleMixin, TemplateView):
+    template_name = 'products/index.html'
+    title = 'Store'
+
+
+class ProductsListView(TitleMixin, ListView):
     model = Product
     template_name = 'products/products.html'
     paginate_by = 3
+    title = 'Store - каталог'
 
     def get_queryset(self):
         queryset = super(ProductsListView, self).get_queryset()
@@ -17,26 +25,8 @@ class ProductsListView(ListView):
 
     def get_context_data(self, *, object_list=None, **kwargs):
         context = super(ProductsListView, self).get_context_data()
-        context['title'] = 'Store - Каталог'
         context['categories'] = ProductCategory.objects.all()
         return context
-
-
-class IndexView(TemplateView):
-    template_name = 'products/index.html'
-
-    def get_context_data(self, **kwargs):
-        context = super(IndexView, self).get_context_data()
-        context['title'] = 'Store'
-        return context
-
-
-def index(request):
-    context = {
-        'title': 'Test Title',
-        'is_promotion': False,
-    }
-    return render(request, 'products/index.html', context)
 
 
 @login_required()
