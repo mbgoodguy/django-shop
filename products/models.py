@@ -18,6 +18,7 @@ class ProductCategory(models.Model):
 
 
 class Product(models.Model):
+    id = models.AutoField(primary_key=True)
     name = models.CharField(max_length=256, unique=True)
     description = models.TextField()
     price = models.DecimalField(max_digits=7, decimal_places=2)
