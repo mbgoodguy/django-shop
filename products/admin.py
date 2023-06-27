@@ -10,6 +10,6 @@ class ProductAdmin(admin.ModelAdmin):
     list_display = ('name', 'price', 'quantity', 'category', 'id')
     fields = ('name', 'description', ('price', 'quantity'), 'image', 'category', 'id')
     readonly_fields = ('id',)
-    search_fields = ('name', 'id')
+    search_fields = ('name',)
     ordering = ('name', 'id')
 
