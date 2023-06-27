@@ -1,4 +1,5 @@
 from django.contrib import admin
+
 from products.models import Product, ProductCategory
 
 # Register your models here.
@@ -12,4 +13,3 @@ class ProductAdmin(admin.ModelAdmin):
     readonly_fields = ('id',)
     search_fields = ('name',)
     ordering = ('name', 'id')
-
