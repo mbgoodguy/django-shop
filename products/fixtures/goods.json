@@ -5,7 +5,7 @@
     "fields": {
       "name": "Худи черного цвета с монограммами adidas Originals",
       "description": "Мягкая ткань для свитшотов. Стиль и комфорт – это образ жизни.",
-      "price": "6090.00",
+      "price": "123.00",
       "quantity": 10,
       "image": "products_images/Adidas-hoodie.png",
       "category": 1
@@ -68,6 +68,18 @@
       "price": "2890.00",
       "quantity": 10,
       "image": "products_images/Dark-blue-wide-leg-ASOs-DESIGN-trousers.png",
+      "category": 1
+    }
+  },
+  {
+    "model": "products.product",
+    "pk": 16,
+    "fields": {
+      "name": "Товар3",
+      "description": "ыфавфыа",
+      "price": "123.00",
+      "quantity": 12,
+      "image": "",
       "category": 1
     }
   }

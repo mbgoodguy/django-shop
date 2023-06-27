@@ -1,4 +1,6 @@
 from django.db import models
+from django.urls import reverse
+
 from users.models import User
 
 
@@ -20,7 +22,7 @@ class Product(models.Model):
     description = models.TextField()
     price = models.DecimalField(max_digits=7, decimal_places=2)
     quantity = models.PositiveIntegerField(default=0)
-    image = models.ImageField(upload_to='products_images')
+    image = models.ImageField(blank=True, upload_to='products_images')
     category = models.ForeignKey(ProductCategory, on_delete=models.PROTECT)
 
     def __str__(self):
@@ -29,6 +31,9 @@ class Product(models.Model):
     class Meta:
         verbose_name = 'product'
         verbose_name_plural = 'products'
+
+    def get_absolute_url(self):
+        return reverse('web:update_product', args=[self.id])
 
 
 class BasketQuerySet(models.QuerySet):

@@ -1,6 +1,5 @@
 from django.shortcuts import render, HttpResponseRedirect
-from django.contrib import auth
-from django.contrib.auth.views import LoginView
+from django.contrib.auth.views import LoginView, PasswordResetView
 from django.contrib.messages.views import SuccessMessageMixin
 from django.urls import reverse, reverse_lazy
 from django.views.generic.edit import CreateView, UpdateView
@@ -57,3 +56,7 @@ class EmailVerificationView(TitleMixin, TemplateView):
             return super(EmailVerificationView, self).get(request, *args, **kwargs)
         else:
             return HttpResponseRedirect(reverse('index'))
+
+
+class ResetPasswordView(PasswordResetView):
+    template_name = 'users/password_reset_email.html'
