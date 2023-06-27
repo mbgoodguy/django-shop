@@ -11,5 +11,5 @@ class ProductAdmin(admin.ModelAdmin):
     fields = ('name', 'description', ('price', 'quantity'), 'image', 'category', 'id')
     readonly_fields = ('id',)
     search_fields = ('name', 'id')
-    ordering = ('name', 'id', 'category')
+    ordering = ('name', 'id')
 
