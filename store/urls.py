@@ -23,14 +23,15 @@ from products.views import IndexView
 from users.views import ResetPasswordView
 
 urlpatterns = [
-    path('admin/', admin.site.urls),
     path('', IndexView.as_view(extra_context={'title': 'Store'}), name='index'),
-    path('products/', include('products.urls', namespace='products')),
-    path('users/', include('users.urls', namespace='users')),
+    path('accounts/', include('allauth.urls')),
+    path('admin/', admin.site.urls),
+    path('password_reset/', ResetPasswordView.as_view(), name='password_reset'),
     path('password_reset/done/', auth_views.PasswordResetDoneView.as_view(), name='password_reset_done'),
+    path('products/', include('products.urls', namespace='products')),
     path('reset/<uidb64>/<token>/', auth_views.PasswordResetConfirmView.as_view(), name='password_reset_confirm'),
     path('reset/done/', auth_views.PasswordResetCompleteView.as_view(), name='password_reset_complete'),
-    path('password_reset/', ResetPasswordView.as_view(), name='password_reset'),
+    path('users/', include('users.urls', namespace='users')),
     path('web/', include('web.urls')),
 ]
 
