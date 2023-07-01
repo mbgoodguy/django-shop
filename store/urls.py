@@ -23,7 +23,7 @@ from products.views import IndexView
 from users.views import ResetPasswordView
 
 urlpatterns = [
-    path('', IndexView.as_view(extra_context={'title': 'Store'}), name='index'),
+    path('', IndexView.as_view(), name='index'),
     path('accounts/', include('allauth.urls')),
     path('admin/', admin.site.urls),
     path('password_reset/', ResetPasswordView.as_view(), name='password_reset'),
