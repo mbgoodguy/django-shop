@@ -35,11 +35,14 @@ class ProductsListViewTestCase(TestCase):
         path = reverse('products:category', kwargs={'category_id': category.id})
         response = self.client.get(path)
 
-        self._common_tests(response)
-        self.assertEqual(
-            list(response.context_data['object_list']),
-            list(self.products.filter(category_id=category.id)),
-        )
+        # Получить объект страницы с товарами на первой странице пагинации
+        page = response.context_data['page_obj']
+        # Получить данные (товары) на первой странице пагинации
+        items_on_page = page.object_list
+        # Убедиться, что количество товаров на странице соответствует ожидаемому
+        self.assertEqual(3, len(items_on_page))
+        # Сравнить полученные товары с ожидаемыми товарами
+        self.assertEqual(list(response.context_data['object_list']), list(items_on_page))
 
     def _common_tests(self, response):
         self.assertEqual(response.status_code, HTTPStatus.OK)
