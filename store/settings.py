@@ -25,7 +25,7 @@ SECRET_KEY = 'django-insecure-)vq_dc+x&(llwq3jprf^=wfzep+l8#0qr*sb4t=upnu_5p(_1h
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['127.0.0.1', 'testserver']
+ALLOWED_HOSTS = ['127.0.0.1', 'testserver', 'localhost']
 DOMAIN_NAME = 'http://localhost:8000'
 
 # Application definition
@@ -170,13 +170,13 @@ LOGIN_URL = '/users/login/'
 LOGIN_REDIRECT_URL = '/'
 LOGOUT_REDIRECT_URL = '/'
 
-# # Sending emails
-# EMAIL_HOST = 'smtp.gmail.com'
-# EMAIL_PORT = 465
-# EMAIL_HOST_PASSWORD = 'qjqvbeodpamusvsr'
-# EMAIL_HOST_USER = 'nerooren4001@gmail.com'
-# EMAIL_USE_SSL = True
-EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'
+# Sending emails
+EMAIL_HOST = 'smtp.gmail.com'
+EMAIL_PORT = 465
+EMAIL_HOST_PASSWORD = 'qjqvbeodpamusvsr'
+EMAIL_HOST_USER = 'nerooren4001@gmail.com'
+EMAIL_USE_SSL = True
+# EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'
 
 # Oauth2.0
 AUTHENTICATION_BACKENDS = [
@@ -193,3 +193,7 @@ SOCIALACCOUNT_PROVIDERS = {
         ],
     }
 }
+
+# celery
+CELERY_BROKER_URL = 'redis://127.0.0.1:6379'
+CELERY_RESULT_BACKEND = 'redis://127.0.0.1:6379'
