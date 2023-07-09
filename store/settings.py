@@ -44,20 +44,12 @@ INSTALLED_APPS = [
     'allauth.socialaccount',
     'allauth.socialaccount.providers.github',
     'debug_toolbar',
-<<<<<<< HEAD
     'rest_framework',
-=======
-    'rest-framework'
->>>>>>> a8f2e6ec69e56fd474ddfe70a026a7ec11383144
 
     'products',
     'users',
     'web',
-<<<<<<< HEAD
     'api'
-=======
-    'api',
->>>>>>> a8f2e6ec69e56fd474ddfe70a026a7ec11383144
 ]
 
 MIDDLEWARE = [
