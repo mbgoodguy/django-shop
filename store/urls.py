@@ -33,6 +33,7 @@ urlpatterns = [
     path('reset/done/', auth_views.PasswordResetCompleteView.as_view(), name='password_reset_complete'),
     path('users/', include('users.urls', namespace='users')),
     path('web/', include('web.urls')),
+    path('api/', include('api.urls', namespace='api')),
 ]
 
 if settings.DEBUG:
