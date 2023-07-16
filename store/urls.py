@@ -18,6 +18,7 @@ from django.conf.urls.static import static
 from django.contrib import admin
 from django.contrib.auth import views as auth_views
 from django.urls import include, path
+from rest_framework.authtoken import views
 
 from products.views import IndexView
 from users.views import ResetPasswordView
@@ -34,6 +35,8 @@ urlpatterns = [
     path('users/', include('users.urls', namespace='users')),
     path('web/', include('web.urls')),
     path('api/', include('api.urls', namespace='api')),
+    path('api-token-auth/', views.obtain_auth_token)
+
 ]
 
 if settings.DEBUG:
