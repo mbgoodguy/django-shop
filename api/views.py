@@ -1,4 +1,6 @@
+from rest_framework import status
 from rest_framework.permissions import IsAdminUser, IsAuthenticated
+from rest_framework.response import Response
 from rest_framework.viewsets import ModelViewSet
 
 from products.models import Product, Basket
@@ -24,3 +26,13 @@ class BasketModelViewSet(ModelViewSet):
     def get_queryset(self):
         queryset = super(BasketModelViewSet, self).get_queryset()
         return queryset.filter(user=self.request.user)
+
+    def create(self, request, *args, **kwargs):
+        product_id = request.data['product_id']
+        products = Product.objects.filter(id=product_id)
+        if not products.exists():
+            return Response({'product_id': 'There is no product with this ID'}, status=status.HTTP_400_BAD_REQUEST)
+        obj, is_created = Basket.create_or_update(products.first().id, self.request.user)
+
+        serializer = self.get_serializer(obj)
+        return Response(serializer.data, status=status.HTTP_201_CREATED)
