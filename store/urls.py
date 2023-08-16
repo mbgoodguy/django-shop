@@ -35,7 +35,9 @@ urlpatterns = [
     path('users/', include('users.urls', namespace='users')),
     path('web/', include('web.urls')),
     path('api/', include('api.urls', namespace='api')),
-    path('api-token-auth/', views.obtain_auth_token)
+    path('api-token-auth/', views.obtain_auth_token),
+    path('orders/', include('orders.urls')),
+
 
 ]
 

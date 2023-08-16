@@ -1,5 +1,5 @@
 from django.views.generic import CreateView
 
 
-class OrderCreate(CreateView):
+class OrderCreateView(CreateView):
     template_name = 'orders/order-create.html'
