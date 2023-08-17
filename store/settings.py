@@ -26,7 +26,7 @@ SECRET_KEY = 'django-insecure-)vq_dc+x&(llwq3jprf^=wfzep+l8#0qr*sb4t=upnu_5p(_1h
 DEBUG = True
 
 ALLOWED_HOSTS = ['127.0.0.1', 'testserver', 'localhost']
-DOMAIN_NAME = 'http://localhost:8000'
+DOMAIN_NAME = 'http://127.0.0.1:8000'
 
 # Application definition
 
@@ -213,3 +213,8 @@ REST_FRAMEWORK = {
         'rest_framework.authentication.TokenAuthentication',
     ]
 }
+
+# Stripe
+STRIPE_PUBLIC = 'pk_test_51Ng2ocImHEEWzcFzVsk7QG3Hy2XOJ2hf1vi3mRaw5dgeSjUbeCLFqbcTjurpV0Et7WwcGzUKlnRChVu11cnL1MEU00qrJEpKgz'
+STRIPE_SECRET = 'sk_test_51Ng2ocImHEEWzcFzIVgVgOfZjdwPkTemnK6YhoTLpmdXdbUrpUpURtF37XxlDWwLOsPGoLRU9jMNMVkDrTzyVQlB00Zd2bxSQS'
+STRIPE_WEBHOOK_SECRET = 'whsec_da3d678ad00401dda05408b7512e410016fae203a0ca555247d1c50eccbad2e1'
