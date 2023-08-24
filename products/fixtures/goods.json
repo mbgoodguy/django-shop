@@ -8,7 +8,8 @@
       "price": "123.00",
       "quantity": 10,
       "image": "products_images/Adidas-hoodie.png",
-      "category": 1
+      "category": 1,
+      "stripe_product_price_id": "price_1NgU3SImHEEWzcFzmaXlKQ5L"
     }
   },
   {
@@ -20,7 +21,8 @@
       "price": "23725.00",
       "quantity": 10,
       "image": "products_images/Blue-jacket-The-North-Face.png",
-      "category": 1
+      "category": 1,
+      "stripe_product_price_id": "price_1NgTwhImHEEWzcFz5EmlznD1"
     }
   },
   {
@@ -32,7 +34,8 @@
       "price": "3390.00",
       "quantity": 10,
       "image": "products_images/Brown-sports-oversized-top-ASOS-DESIGN.png",
-      "category": 1
+      "category": 1,
+      "stripe_product_price_id": "price_1NgUfdImHEEWzcFz9feWajJy"
     }
   },
   {
@@ -44,7 +47,8 @@
       "price": "2340.00",
       "quantity": 10,
       "image": "products_images/Black-Nike-Heritage-backpack.png",
-      "category": 5
+      "category": 5,
+      "stripe_product_price_id": "price_1NgTwiImHEEWzcFzzlGU4DK0"
     }
   },
   {
@@ -56,7 +60,8 @@
       "price": "13590.00",
       "quantity": 10,
       "image": "products_images/Black-Dr-Martens-shoes.png",
-      "category": 3
+      "category": 3,
+      "stripe_product_price_id": "price_1NgTwjImHEEWzcFzrt6ZgCN5"
     }
   },
   {
@@ -68,19 +73,60 @@
       "price": "2890.00",
       "quantity": 10,
       "image": "products_images/Dark-blue-wide-leg-ASOs-DESIGN-trousers.png",
-      "category": 1
+      "category": 1,
+      "stripe_product_price_id": "price_1NgTwjImHEEWzcFzLCh16cHe"
     }
   },
   {
     "model": "products.product",
-    "pk": 16,
+    "pk": 21,
     "fields": {
-      "name": "Товар3",
-      "description": "ыфавфыа",
-      "price": "123.00",
-      "quantity": 12,
-      "image": "",
-      "category": 1
+      "name": "Сумка шопер из кожи",
+      "description": "Сумка 1 описание",
+      "price": "6100.00",
+      "quantity": 10,
+      "image": "products_images/сумка-шопер.jpg",
+      "category": 4,
+      "stripe_product_price_id": "price_1NihTpImHEEWzcFzzkVtsHeA"
+    }
+  },
+  {
+    "model": "products.product",
+    "pk": 22,
+    "fields": {
+      "name": "Сумка-мессенджер",
+      "description": "Лаконичная сумка-мессенджер выполнена из долговечной искусственной кожи.",
+      "price": "5400.00",
+      "quantity": 3,
+      "image": "products_images/sumka2.jpg",
+      "category": 4,
+      "stripe_product_price_id": "price_1NihVOImHEEWzcFzSRe49uWw"
+    }
+  },
+  {
+    "model": "products.product",
+    "pk": 23,
+    "fields": {
+      "name": "Сумка для ланча mb e-zy темно-розовая",
+      "description": "Идеальное дополнением к каждому ланч-боксу",
+      "price": "3700.00",
+      "quantity": 10,
+      "image": "products_images/sumka3.jpeg",
+      "category": 4,
+      "stripe_product_price_id": "price_1NihZPImHEEWzcFz5ehUAn00"
+    }
+  },
+  {
+    "model": "products.product",
+    "pk": 24,
+    "fields": {
+      "name": "Сумка тоут VERONA черная",
+      "description": "Сумка среднего размера из итальянской кожи премиального качества с фактурой мелкого зерна.",
+      "price": "7000.00",
+      "quantity": 15,
+      "image": "products_images/verona.jpg",
+      "category": 4,
+      "stripe_product_price_id": "price_1Nihc2ImHEEWzcFz46U1ApsU"
     }
   }
 ]
